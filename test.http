@@ -1,0 +1,87 @@
+### Check api status
+GET http://localhost:4000/api
+Content-Type: application/json
+
+
+
+### create a new account
+POST http://localhost:3000/api/signup
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjIyYzcwZGYzMmNmYTg2Y2UyZGZhYWE3IiwiaWF0IjoxNjQ3MDc5NjQ3LCJleHAiOjE2NDcxNjYwNDd9.m7Q9Fyg3HO_j_FaE2HovuNBHGeItCk9Btvhg-M5SXzk"
+
+{	"name": "myname",
+ 	"username":"username",
+ 	"password":"bhaskar@1",
+ 	"role": "basic" 
+ }
+
+
+### signin to an existing account
+
+POST http://localhost:3000/api/signin
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjIyYzcwZGYzMmNmYTg2Y2UyZGZhYWE3IiwiaWF0IjoxNjQ3MDc5NjQ3LCJleHAiOjE2NDcxNjYwNDd9.m7Q9Fyg3HO_j_FaE2HovuNBHGeItCk9Btvhg-M5SXzk
+
+{
+	"username":"userone",
+	"password":"password@1"
+ }
+
+
+
+### create new return record
+
+POST http://localhost:3000/api/new
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmU3ZmE4N2JiZTA1YzQzMmY4Y2EyMSIsInJvbGUiOiJiYXNpYyIsInVzZXJuYW1lIjoidXNlcnRocmVlIiwiaWF0IjoxNjQ3MjIyNDE4LCJleHAiOjE2NDcyMjYwMTh9.VFwN_2wozI5aMSsg8nlUZ6FnKMrHYXpivZaYUu5cEAA
+
+{
+   "name":"mr john",
+   "companyname":"bright star ltd",
+   "netsale":2668692,
+   "salaryincome":974958,
+   "statecode":35,
+   "sharemarketincome":50000
+}
+
+
+###view all tax return records as per permission
+
+GET http://localhost:3000/api/all
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmU3ZjU3N2JiZTA1YzQzMmY4Y2ExYiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoidXNlcm9uZSIsImlhdCI6MTY0NzIyMzc1NCwiZXhwIjoxNjQ3MjI3MzU0fQ.NfYT-i_WSes5E1vG3553VFQzqhehp91ooi9HrhXBdXA
+
+
+###
+
+GET http://localhost:3000/api/one/622ea1174c499b0ff41ac865
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmU3ZjU3N2JiZTA1YzQzMmY4Y2ExYiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoidXNlcm9uZSIsImlhdCI6MTY0NzIyMzc1NCwiZXhwIjoxNjQ3MjI3MzU0fQ.NfYT-i_WSes5E1vG3553VFQzqhehp91ooi9HrhXBdXA
+
+
+###
+POST http://localhost:3000/api/review/622ea1174c499b0ff41ac865
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmU3ZjU3N2JiZTA1YzQzMmY4Y2ExYiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoidXNlcm9uZSIsImlhdCI6MTY0NzIzMTU4MSwiZXhwIjoxNjQ3MjM1MTgxfQ.LZlmu1Fh6CBkgVlgczhLX3YezkpLPs0n5WsO4dF8wMA
+
+{
+"pan": "abcd12k",
+"totalincometax": 80000,
+ "gstno":"raj008indgst"
+}
+
+###
+
+POST http://localhost:3000/api/createdue/
+Content-Type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmU3ZjhhN2JiZTA1YzQzMmY4Y2ExZSIsInJvbGUiOiJhY2NvdW50YW50IiwidXNlcm5hbWUiOiJ1c2VydHdvIiwiaWF0IjoxNjQ3MjI2ODQwLCJleHAiOjE2NDcyMzA0NDB9.OLmZlxfr9uhSzp_azWJkX5nAc9xektSgAus-sYsF8v0
+
+{
+   "date": "2022-03-11",
+   "id": "622ea27a4c499b0ff41ac867"
+   
+}
+
+ GET http://localhost:3000/api/delete/user/622e7f577bbe05c432f8ca1b
+ Content-Type: application/json
+ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyMmU3ZjU3N2JiZTA1YzQzMmY4Y2ExYiIsInJvbGUiOiJhZG1pbiIsInVzZXJuYW1lIjoidXNlcm9uZSIsImlhdCI6MTY0NzIzMTU4MSwiZXhwIjoxNjQ3MjM1MTgxfQ.LZlmu1Fh6CBkgVlgczhLX3YezkpLPs0n5WsO4dF8wMA
+
